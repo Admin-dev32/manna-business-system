@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Manna Snack Bars — Dirección Visual Fase 1</title>
+<style>
+:root{
+ --ink:#2f2d2c; --muted:#716c68; --paper:#fffdfb; --soft:#fbf7f3; --line:#ebe4df;
+ --sky:#66bce8; --pink:#e98bb2; --peach:#f1b08f; --gold:#eeb650; --cream:#fff8f2;
+ --lav:#c9b9e9;
+ --grad:linear-gradient(105deg,#66bce8 0%,#9bc8ee 18%,#c9b9e9 34%,#e98bb2 52%,#f1b08f 76%,#eeb650 100%);
+ --grad-soft:linear-gradient(105deg,#eef9fd 0%,#f4f8fd 20%,#f7f3fb 35%,#fff0f6 54%,#fff3ed 76%,#fff7e8 100%);
+ --shadow:0 18px 55px rgba(80,63,51,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.5}
+a{color:inherit}
+.wrap{width:min(1180px,calc(100% - 36px));margin:auto}
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,253,251,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(235,228,223,.9)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:18px}
+.brand{font-weight:850;letter-spacing:-.035em}
+.navlinks{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;font-weight:700;color:#625d59}
+.navlinks a{text-decoration:none}
+.hero{min-height:680px;display:grid;align-items:center;overflow:hidden;position:relative;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fffdfb 0%,#fffaf7 100%)}
+.hero:before{content:"";position:absolute;inset:auto -8% -30% 30%;height:560px;background:var(--grad-soft);filter:blur(48px);border-radius:50%;opacity:.92}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:58px;align-items:center;padding:78px 0}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.18em;font-weight:800;color:#7c746e;margin-bottom:14px}
+h1{font-size:clamp(52px,7vw,94px);line-height:.96;letter-spacing:-.06em;margin:0 0 24px;font-weight:900;max-width:760px}
+.gradtext{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:20px;color:#5f5a56;max-width:650px;margin:0 0 28px}
+.pills{display:flex;flex-wrap:wrap;gap:9px}
+.pill{padding:9px 13px;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:750;background:rgba(255,255,255,.82);color:#514d49}
+.logo-stage{position:relative;padding:38px;border:1px solid rgba(235,228,223,.95);border-radius:24px;background:rgba(255,255,255,.96);box-shadow:var(--shadow)}
+.logo-stage:after{content:"";position:absolute;inset:auto 26px -7px auto;width:112px;height:7px;background:var(--grad);border-radius:999px;opacity:.85}
+.logo-stage img{display:block;width:100%;height:auto}
+.section{padding:88px 0;border-bottom:1px solid var(--line)}
+.section.soft{background:var(--soft)}
+.section.gradientwash{background:linear-gradient(180deg,#fffdfb 0%,#fffaf8 28%,#fff8f5 52%,#fffdfb 100%)}
+.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.16em;font-weight:800;color:#817973;margin-bottom:10px}
+h2{font-size:clamp(36px,5vw,64px);line-height:1.02;letter-spacing:-.052em;margin:0 0 18px;font-weight:900}
+.intro{max-width:780px;font-size:18px;color:#645f5b;margin:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.card{border:1px solid var(--line);background:rgba(255,255,255,.92);border-radius:18px;padding:28px;box-shadow:0 10px 32px rgba(82,68,58,.04)}
+.card.strong{border:1px solid #e7ddd6;background:linear-gradient(145deg,#fffdfb 0%,#fff8f3 100%);box-shadow:var(--shadow)}
+.card h3{font-size:22px;line-height:1.08;letter-spacing:-.03em;margin:0 0 10px}
+.card p{margin:0;color:#625d59}
+.list{display:grid;gap:11px;margin-top:20px}
+.item{display:flex;gap:12px;align-items:flex-start;font-size:15px}
+.dot{width:8px;height:8px;border-radius:50%;background:#e79abb;flex:0 0 auto;margin-top:7px}
+.palette{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:28px}
+.swatch{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 8px 24px rgba(82,68,58,.035)}
+.swatch .color{height:106px}
+.swatch .meta{padding:12px 13px;font-size:12px;font-weight:750;color:#5d5753}
+.gradientbar{margin-top:18px;height:110px;border-radius:18px;background:var(--grad);position:relative;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+.gradientbar:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.18),rgba(255,255,255,.52) 48%,rgba(255,255,255,.12));mix-blend-mode:screen}
+.gradientbar:after{content:"Gradiente Manna · versión web";position:absolute;right:18px;bottom:16px;background:rgba(255,255,255,.88);color:#514d49;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:800;border:1px solid rgba(255,255,255,.72);backdrop-filter:blur(8px)}
+.rulebox{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
+.rule{padding:26px;border-radius:18px;border:1px solid var(--line);background:#fff}
+.rule.yes{background:linear-gradient(145deg,#fff 0%,#fffaf7 100%)}
+.rule.no{background:#fffdfc}
+.rule h3{margin:0 0 12px;font-size:18px}
+.refgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.ref{padding:26px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 10px 30px rgba(82,68,58,.035)}
+.ref a{display:inline-flex;margin-top:15px;font-weight:800;text-decoration:none;color:#514d49;border-bottom:1px solid #bdb4ae}
+.quote{font-size:24px;line-height:1.2;font-weight:850;letter-spacing:-.03em;margin:0;color:#3b3836}
+.small{font-size:13px;color:#77706a;margin-top:8px}
+.logo-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:999px;text-decoration:none;font-weight:800;font-size:14px;border:1px solid #dfd7d1;background:#fff;color:#4f4a46;box-shadow:0 7px 20px rgba(82,68,58,.045)}
+.btn.alt{background:#fff;color:#4f4a46}
+.btn.grad{background:linear-gradient(105deg,#eaf7fd 0%,#f6eefb 35%,#fff0f6 55%,#fff0e8 80%,#fff7df 100%);color:#4d4945;border-color:#f0dfd5}
+.asset{padding:56px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(135deg,#fffdfb 0%,#fff9f5 52%,#fff7ef 100%);position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.asset:before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:var(--grad-soft);filter:blur(54px);opacity:.78;right:-90px;top:-100px}
+.asset>*{position:relative}
+.footer{padding:44px 0 70px;font-size:13px;color:#77706a}
+.badge{display:inline-flex;padding:7px 10px;border-radius:999px;background:#fff3f7;color:#625b57;font-weight:750;font-size:12px;margin-top:12px;border:1px solid #f3e2e9}
+@media(max-width:850px){
+ .hero-grid,.grid2,.rulebox,.refgrid{grid-template-columns:1fr}
+ .grid3{grid-template-columns:1fr 1fr}
+ .palette{grid-template-columns:repeat(3,1fr)}
+ .navlinks{display:none}
+ .hero{min-height:auto}
+ .hero-grid{padding:54px 0}
+}
+@media(max-width:560px){.grid3{grid-template-columns:1fr}.palette{grid-template-columns:1fr 1fr}.section{padding:64px 0}h1{font-size:50px}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap"><div class="brand">Manna Snack Bars</div><div class="navlinks">
+<a href="#marca">Marca</a><a href="#objetivo">Objetivo</a><a href="#colores">Colores</a><a href="#servicios">Servicios</a><a href="#referencias">Referencias</a><a href="#foto">Fotografía</a><a href="#assets">Assets</a>
+</div></div></nav>
+<header class="hero"><div class="wrap hero-grid">
+<div>
+<div class="eyebrow">Fase 1 · Dirección visual y contexto de marca</div>
+<h1>Una experiencia de evento <span class="gradtext">que se siente Manna.</span></h1>
+<p class="lead">Manna Snack Bars está creciendo de snack bars hacia una marca de experiencias para eventos: visual, organizada, cálida, interactiva y fácil de reservar.</p>
+<div class="pills"><span class="pill">Premium accesible</span><span class="pill">Visual</span><span class="pill">Cálida</span><span class="pill">Moderna</span><span class="pill">Organizada</span></div>
+</div>
+<div class="logo-stage"><img src="https://res.cloudinary.com/dducny8dx/image/upload/v1782360861/logo_hacbl7.png" alt="Logo Manna Snack Bars"></div>
+</div></header>
+<section class="section" id="marca"><div class="wrap">
+<div class="kicker">01 · Marca</div><h2>Qué es Manna.</h2>
+<p class="intro">Manna no busca verse como una mesa de snacks informal. La experiencia, la presentación y la interacción durante el evento importan tanto como el producto.</p>
+<div class="grid2">
+<div class="card strong"><h3>Concepto</h3><p class="quote">“No solamente servimos snacks; creamos experiencias especiales para cada celebración.”</p></div>
+<div class="card"><h3>Trayectoria</h3><p>Manna comenzó hace aproximadamente dos años y ha evolucionado de una operación sencilla a un negocio con procesos, personal, preparación de eventos, inventario, booking, marketing y sistemas internos. La siguiente etapa es representar visualmente ese crecimiento.</p></div>
+</div>
+</div></section>
+<section class="section gradientwash" id="objetivo"><div class="wrap">
+<div class="kicker">02 · Objetivo</div><h2>Que el anfitrión pueda disfrutar su propio evento.</h2>
+<p class="intro">Reconocemos que hay familias y organizadores que valoran la calidad, el buen servicio y la tranquilidad de trabajar con un equipo en quien puedan confiar. Manna quiere ser ese equipo: atento, responsable y presente, para que el cliente no tenga que estar pendiente de cada detalle durante su celebración.</p>
+<div class="grid2">
+<div class="card strong"><h3>Nuestra promesa</h3><p class="quote">“Queremos que el cliente sepa que las cosas se están haciendo bien, que sus invitados están disfrutando y que nosotros estamos pendientes de que la experiencia fluya como debe.”</p></div>
+<div class="card"><h3>La cultura que queremos construir</h3><div class="list">
+<div class="item"><span class="dot"></span><span>Servicio de calidad y atención genuina.</span></div>
+<div class="item"><span class="dot"></span><span>Personal responsable que observa, resuelve y cuida la experiencia.</span></div>
+<div class="item"><span class="dot"></span><span>Invitados con sonrisas, interactuando y pasándola bien.</span></div>
+<div class="item"><span class="dot"></span><span>Un anfitrión que puede estar presente con su familia en lugar de supervisarnos.</span></div>
+<div class="item"><span class="dot"></span><span>Una comunidad y cultura de trabajo donde hacer las cosas bien es parte de nuestra ética.</span></div>
+</div></div>
+</div>
+</div></section>
+<section class="section soft"><div class="wrap">
+<div class="kicker">03 · Logo oficial</div><h2>El logo guía la identidad.</h2>
+<p class="intro">La paleta del website debe sentirse como una extensión natural del logo: blanco y negro para estructura, con el gradiente Manna como energía visual.</p>
+<div class="grid2">
+<div class="card"><img src="https://res.cloudinary.com/dducny8dx/image/upload/v1782360861/logo_hacbl7.png" alt="Logo Manna Snack Bars" style="width:100%;display:block;border-radius:14px"></div>
+<div class="card strong"><h3>Archivos del logo</h3><p>Usar este logo como referencia principal de color y personalidad visual.</p>
+<div class="logo-actions">
+<a class="btn" href="https://res.cloudinary.com/dducny8dx/image/upload/v1782360861/logo_hacbl7.png" target="_blank" rel="noopener">Abrir logo en Cloudinary</a>
+<a class="btn alt" href="https://res.cloudinary.com/dducny8dx/image/upload/v1782360861/logo_hacbl7.png" download="manna-snack-bars-logo.png">Descargar copia incluida</a>
+</div>
+<div class="badge">Referencia principal de color</div>
+</div>
+</div>
+</div></section>
+<section class="section gradientwash" id="colores"><div class="wrap">
+<div class="kicker">04 · Sistema de color</div><h2>Color tomado del logo, no inventado aparte.</h2>
+<p class="intro">La base debe permanecer clara y limpia. Los colores aparecen como gradientes, detalles, fondos suaves, botones y momentos de impacto. El negro del logo se traduce en la web como carbón suave para texto y contraste puntual; no como grandes contenedores ni bordes pesados.</p>
+<div class="palette">
+<div class="swatch"><div class="color" style="background:#66BCE8"></div><div class="meta">Azul cielo<br>#66BCE8</div></div>
+<div class="swatch"><div class="color" style="background:#E98BB2"></div><div class="meta">Rosa Manna<br>#E98BB2</div></div>
+<div class="swatch"><div class="color" style="background:#F1B08F"></div><div class="meta">Durazno cálido<br>#F1B08F</div></div>
+<div class="swatch"><div class="color" style="background:#EEB650"></div><div class="meta">Dorado suave<br>#EEB650</div></div>
+<div class="swatch"><div class="color" style="background:#FFF8F2"></div><div class="meta">Crema cálido<br>#FFF8F2</div></div>
+<div class="swatch"><div class="color" style="background:#2F2D2C"></div><div class="meta">Carbón suave<br>#2F2D2C</div></div>
+</div>
+<div class="gradientbar"></div>
+<div class="rulebox">
+<div class="rule yes"><h3>✓ Queremos</h3><div class="list">
+<div class="item"><span class="dot"></span><span>Fondos blancos o muy claros.</span></div>
+<div class="item"><span class="dot"></span><span>Gradientes amplios y suaves inspirados en el círculo del logo.</span></div>
+<div class="item"><span class="dot"></span><span>Tipografía carbón, gruesa y limpia; negro puro solo cuando haga falta máxima legibilidad.</span></div>
+<div class="item"><span class="dot"></span><span>Un color fuerte solo cuando la composición necesite impacto.</span></div>
+</div></div>
+<div class="rule no"><h3>× Evitar</h3><div class="list">
+<div class="item"><span class="dot"></span><span>Grandes secciones oscuras, bordes gruesos o sombras negras duras.</span></div>
+<div class="item"><span class="dot"></span><span>Morados/plums oscuros que no nazcan del logo.</span></div>
+<div class="item"><span class="dot"></span><span>Look infantil, saturado o tipo “party template”.</span></div>
+<div class="item"><span class="dot"></span><span>Demasiados colores sólidos compitiendo entre sí.</span></div>
+</div></div>
+</div>
+</div></section>
+<section class="section" id="servicios"><div class="wrap">
+<div class="kicker">05 · Qué hace Manna</div><h2>Servicios que deben poder vivir dentro de la marca.</h2>
+<p class="intro">Cada servicio debe sentirse como parte de una experiencia de evento completa: montaje, presentación, atención, interacción con invitados y desmontaje.</p>
+<div class="grid3">
+<div class="card"><h3>Snack Bars</h3><p>Mini Pancakes · Maruchan · Esquites · Tostilocos / snack-style bars · Candy / sweets y otras barras.</p></div>
+<div class="card"><h3>Experiencias</h3><p>Bartender Premium · Shot Cart · Cakes / Desserts · Charcuterie & Cheese Live Bar con experiencia de vino.</p></div>
+<div class="card"><h3>Eventos</h3><p>Weddings · Quinceañeras · Baby Showers · Birthdays · Family / Private Events · Corporate Events.</p></div>
+</div>
+</div></section>
+<section class="section soft"><div class="wrap">
+<div class="kicker">06 · Juegos</div><h2>Basic Games ahora. Premium Games después.</h2>
+<div class="grid2">
+<div class="card strong"><h3>Basic Games</h3><p>Se presentan sobre cocktail tables con mantel blanco.</p><div class="list">
+<div class="item"><span class="dot"></span><span>Fast Sling Puck</span></div>
+<div class="item"><span class="dot"></span><span>Jenga</span></div>
+<div class="item"><span class="dot"></span><span>Ring Toss</span></div>
+</div></div>
+<div class="card"><h3>Premium Games</h3><p>Todavía por definir. La identidad y arquitectura deben permitir agregar una categoría premium posteriormente sin rehacer el sistema.</p></div>
+</div>
+</div></section>
+<section class="section"><div class="wrap">
+<div class="kicker">07 · Detalles personalizados</div><h2>Eleva tu evento.</h2>
+<p class="intro">Una sección que invite a personalizar y mejorar la presentación del evento sin llamar estos elementos simplemente “decor add-ons”.</p>
+<div class="grid3">
+<div class="card"><h3>Mirror décor</h3><p>Decoración y personalización de espejos para el evento.</p></div>
+<div class="card"><h3>Letras & displays</h3><p>Letras decorativas y stands con fotografías o diseños personalizados.</p></div>
+<div class="card"><h3>Señalización especial</h3><p>Signs personalizados, detalles florales y piezas creadas para complementar la experiencia.</p></div>
+</div>
+</div></section>
+<section class="section gradientwash" id="referencias"><div class="wrap">
+<div class="kicker">08 · Referencias web</div><h2>Qué nos inspira y qué no.</h2>
+<p class="intro">Estas referencias no se usan para copiar un website completo. Cada una aporta una idea específica.</p>
+<div class="refgrid">
+<div class="ref"><h3>The Party Press</h3><p><b>Me gusta:</b> “Straight from the feed / Watch the cart in motion.” La idea de mostrar eventos reales en movimiento funciona muy bien.</p><p><b>No me gusta:</b> secciones con demasiado texto. La gente no debe sentir que tiene que leer un libro.</p><a href="https://thepartypress.co/" target="_blank" rel="noopener">Abrir referencia →</a></div>
+<div class="ref"><h3>LUX Catering & Events</h3><p><b>Me gusta mucho:</b> header y hero, especialmente cómo el logo juega en el centro de la composición. También sus interacciones y el uso de copy corto.</p><a href="https://luxevents.com/" target="_blank" rel="noopener">Abrir referencia →</a></div>
+<div class="ref"><h3>Trishari Checkout</h3><p><b>Idea útil:</b> demasiado simple visualmente, pero sí transmite lo fácil que puede sentirse un proceso de booking.</p><a href="https://www.trishari.com/checkout" target="_blank" rel="noopener">Abrir referencia →</a></div>
+<div class="ref"><h3>Referencias que se sienten genéricas</h3><p>Emily's Events, Love Catering y The Look & The Cook no representan la personalidad que buscamos para Manna. Sirven principalmente como contraste de lo que queremos evitar.</p><div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:15px"><a href="https://emilysevents.com/" target="_blank" rel="noopener">Emily's →</a><a href="https://lovecateringinc.com/" target="_blank" rel="noopener">Love →</a><a href="https://www.thelookandthecook.com/" target="_blank" rel="noopener">Look & Cook →</a></div></div>
+</div>
+</div></section>
+<section class="section" id="foto"><div class="wrap">
+<div class="kicker">09 · Dirección fotográfica</div><h2>La fotografía debe vender la experiencia.</h2>
+<p class="intro">Actualmente existe material real, pero no está organizado ni siempre fue tomado con una dirección definida. El nuevo sistema debe ayudarnos a entender qué fotografía necesitamos producir mejor hacia adelante.</p>
+<div class="grid3">
+<div class="card"><h3>Mostrar más</h3><p>Barras completas, espacio del evento, invitados interactuando, staff sirviendo, montaje terminado y tomas amplias.</p></div>
+<div class="card"><h3>Momentos clave</h3><p>Weddings, Quinceañeras, Baby Showers, Premium Experiences, invitados disfrutando y detalles personalizados.</p></div>
+<div class="card"><h3>Producto como apoyo</h3><p>Close-ups de comida sí, pero como complemento. No queremos que toda la identidad se convierta en fotos cerradas del producto.</p></div>
+</div>
+</div></section>
+<section class="section soft"><div class="wrap">
+<div class="kicker">10 · Escritura y UX</div><h2>No hacer que la gente lea un libro.</h2>
+<div class="grid2">
+<div class="card strong"><h3>Regla de contenido</h3><p class="quote">Una idea clara por sección. Un headline fuerte. Copy corto. La fotografía y la interacción hacen el resto.</p></div>
+<div class="card"><h3>Booking</h3><p>Debe sentirse simple, visual y guiado. El ejemplo de Trishari demuestra la sensación de facilidad; Manna necesita esa facilidad con más personalidad, branding y claridad visual.</p></div>
+</div>
+</div></section>
+<section class="section" id="assets"><div class="wrap">
+<div class="asset"><div class="kicker">11 · Biblioteca visual</div><h2>Fotos, videos y referencias reales.</h2>
+<p class="intro">Aquí se conectará el álbum compartido con el material visual de Manna: Snack Bars, Weddings, Quinceañeras, Baby Showers, staff, invitados, setups, juegos y demás assets.</p>
+<div class="logo-actions" style="margin-top:28px"><a class="btn grad" href="http://bakohub-jorge.quickconnect.to/mo/sharing/yAvtUfe4U" target="_blank" rel="noopener">Abrir biblioteca visual de Manna →</a></div>
+<p class="small">Álbum visual compartido de Manna Snack Bars.</p>
+</div>
+</div></section>
+<section class="section soft"><div class="wrap">
+<div class="kicker">12 · Contexto adicional</div><h2>Links actuales de Manna.</h2>
+<div class="grid3">
+<div class="card"><h3>Website actual</h3><a href="https://mannasnackbars.com/" target="_blank" rel="noopener">mannasnackbars.com →</a></div>
+<div class="card"><h3>Booking actual</h3><a href="https://checkout.mannasnackbars.com/" target="_blank" rel="noopener">checkout.mannasnackbars.com →</a></div>
+<div class="card"><h3>Instagram</h3><a href="https://www.instagram.com/mannasnackbars/" target="_blank" rel="noopener">@mannasnackbars →</a></div>
+</div>
+<div class="card" style="margin-top:18px"><h3>Brief completo de conceptualización</h3><p>Referencia interna con arquitectura, journeys, booking y contexto más profundo del proyecto.</p><a href="https://app.notion.com/p/3e69a9cc6213814095f8c64b1536f234?pvs=204" target="_blank" rel="noopener">Abrir brief en Notion →</a></div>
+</div></section>
+<footer class="footer"><div class="wrap">Manna Snack Bars · Dirección Visual · Fase 1</div></footer>
+</body></html>
